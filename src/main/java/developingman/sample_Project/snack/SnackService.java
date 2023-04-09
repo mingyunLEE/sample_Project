@@ -1,8 +1,13 @@
 package developingman.sample_Project.snack;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class SnackService {
     private static SnackRepository snackRepository;
 
+    @Autowired
     public SnackService(SnackRepository snackRepository){
         this.snackRepository = snackRepository;
     }

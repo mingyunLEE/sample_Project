@@ -1,8 +1,11 @@
 package developingman.sample_Project.snack;
 
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class SnackRepository {
     private static Map<Long, Snack> snacks = new HashMap<>();
 

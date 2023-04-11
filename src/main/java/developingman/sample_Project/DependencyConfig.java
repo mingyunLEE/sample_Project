@@ -5,9 +5,11 @@ import developingman.sample_Project.member.MemberService;
 import developingman.sample_Project.snack.SnackRepository;
 import developingman.sample_Project.snack.SnackService;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ComponentScan
 public class DependencyConfig {
     @Bean
     public MemberService memberService() {

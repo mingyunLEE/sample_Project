@@ -1,11 +1,13 @@
 package developingman.sample_Project.snack;
 
 import developingman.sample_Project.DependencyConfig;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class SnackTest {
     public static void main(String[] args) {
-        DependencyConfig dependencyConfig = new DependencyConfig();
-        SnackService snackService = dependencyConfig.snackService();
+        ApplicationContext ac = new AnnotationConfigApplicationContext(DependencyConfig.class);
+        SnackService snackService = ac.getBean("snackService", SnackService.class);
 
         Snack snack = new Snack(0L, "인디언밥", "indian meal", 1500);
         snackService.createSnack(snack);

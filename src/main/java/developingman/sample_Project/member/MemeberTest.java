@@ -1,11 +1,13 @@
 package developingman.sample_Project.member;
 
 import developingman.sample_Project.DependencyConfig;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MemeberTest {
     public static void main(String[] args){
-        DependencyConfig dependencyConfig = new DependencyConfig();
-        MemberService memberService = dependencyConfig.memberService();
+        ApplicationContext ac = new AnnotationConfigApplicationContext(DependencyConfig.class);
+        MemberService memberService = ac.getBean("memberService", MemberService.class);
 
         Member member = new Member(0L, "leenom@korean.com","LeeNom" , "010-1234-1234");
         memberService.createMember(member);
